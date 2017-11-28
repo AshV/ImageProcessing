@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace ImageProcessing
             var W = b.Width;
 
             var list = new List<int>();
-            for (int i = 0; i < W; i += 3)
+            for (int i = 0; i < W; i += 4)
                 list.Add(i);
 
             var pixelList = new List<Pixel>();
@@ -41,6 +42,8 @@ namespace ImageProcessing
                 WriteLine($"{DateTime.Now} - Setting X:{p.X} & Y:{p.Y}");
                 b.SetPixel(p.X, p.Y, Color.Black);
             });
+
+            b.Save("finalOutput.jpeg", ImageFormat.Jpeg);
         }
     }
 
