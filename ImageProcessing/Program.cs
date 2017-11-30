@@ -14,7 +14,7 @@ namespace ImageProcessing
     {
         static void Main(string[] args)
         {
-            var a = Bitmap.FromFile(@"F:\Downloads\WhatsApp Image 2017-11-27 at 21.23.15.jpeg");
+            var a = Bitmap.FromFile(@"fun.png");
             WriteLine(a.Height);
             WriteLine(a.Width);
             WriteLine(a.HorizontalResolution);
@@ -29,7 +29,7 @@ namespace ImageProcessing
             var W = b.Width;
 
             var list = new List<int>();
-            for (int i = 0; i < W; i += 4)
+            for (int i = 0; i < W && i< H; i += 4)
                 list.Add(i);
 
             var pixelList = new List<Pixel>();
@@ -43,7 +43,7 @@ namespace ImageProcessing
                 b.SetPixel(p.X, p.Y, Color.Black);
             });
 
-            b.Save("finalOutput.jpeg", ImageFormat.Jpeg);
+          //  b.Save("finalOutput.jpeg", ImageFormat.Jpeg);
         }
     }
 
